@@ -11,17 +11,22 @@ public class WarningTimeOut extends Warning {
     }
 
     @Override
-    public void createWarning() {
+    public void createWarning(int hour, int minutes, int seconds) {
 
     }
 
     @Override
-    public void adjustWarning() {
+    public void adjustWarning(int hour, int minutes, int seconds) {
 
     }
 
     @Override
     public void cancelWarning() {
+
+    }
+
+    @Override
+    public void tryRing() {
 
     }
 

@@ -17,11 +17,13 @@ public abstract class Warning {
         this.clock=clock;
     }
 
-    public abstract void createWarning();
+    public abstract void createWarning(int hour, int minutes, int seconds);
 
-    public abstract void adjustWarning();
+    public abstract void adjustWarning(int hour, int minutes, int seconds);
 
     public abstract void cancelWarning();
+
+    public abstract void tryRing();
 
     public abstract void ring();
 
