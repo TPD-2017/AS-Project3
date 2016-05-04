@@ -3,6 +3,8 @@ package tp3;
 
 public abstract class Interface {
 
+    private Clock clock;
+
     public abstract void showTime();
 
     public abstract void adjustTime();
