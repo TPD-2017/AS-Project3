@@ -48,7 +48,11 @@ public class WarningAlarm extends Warning {
     @Override
     public void tryRing() {
         if(this.isSet()){
-
+            if(this.getClock().getHour() == this.getHour()
+                    && this.getClock().getMinutes() == this.getMinutes()
+                    && this.getClock().getSeconds() == this.getSeconds()){
+                this.ring();
+            }
         } else {
             System.out.println(">>Error: Alarm not set.");
         }
@@ -56,6 +60,10 @@ public class WarningAlarm extends Warning {
 
     @Override
     public void ring() {
-
+        System.out.println(">>Alarm is ringing.");
+        this.setSet(false);
+        this.setHour(0);
+        this.setMinutes(0);
+        this.setSeconds(0);
     }
 }

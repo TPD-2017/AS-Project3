@@ -67,4 +67,8 @@ public abstract class Warning {
     public void setSet(boolean set) {
         this.set = set;
     }
+
+    public Clock getClock() {
+        return clock;
+    }
 }
