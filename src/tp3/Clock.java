@@ -3,16 +3,16 @@ package tp3;
 
 public class Clock {
     private Interface cur_interface;
-    private AnalogClockObserver analog;
-    private DigitalClockObserver digital;
+    private InterfaceAnalog analog;
+    private InterfaceDigital digital;
 
     private int hour;
     private int minutes;
     private int seconds;
 
     public Clock(){
-        this.analog = new AnalogClockObserver();
-        this.digital = new DigitalClockObserver();
+        this.analog = new InterfaceAnalog();
+        this.digital = new InterfaceDigital();
         this.cur_interface=this.digital;
     }
 
@@ -48,11 +48,11 @@ public class Clock {
         this.cur_interface = cur_interface;
     }
 
-    public AnalogClockObserver getAnalog() {
+    public InterfaceAnalog getAnalog() {
         return analog;
     }
 
-    public DigitalClockObserver getDigital() {
+    public InterfaceDigital getDigital() {
         return digital;
     }
 
