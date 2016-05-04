@@ -22,39 +22,4 @@ public class InterfaceDigital extends Interface {
         frame.pack();
         frame.setVisible(true);
     }
-
-    @Override
-    public void adjustTime() {
-
-    }
-
-    @Override
-    public void createAlarm() {
-
-    }
-
-    @Override
-    public void cancelAlarm() {
-
-    }
-
-    @Override
-    public void createTimeOut() {
-
-    }
-
-    @Override
-    public void cancelTimeOut() {
-
-    }
-
-    @Override
-    public void ring() {
-
-    }
-
-    @Override
-    public void tick() {
-
-    }
 }
