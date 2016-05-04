@@ -6,6 +6,10 @@ import java.awt.*;
 
 public class InterfaceDigital extends Interface {
 
+    public InterfaceDigital(Clock clock) {
+        super(clock);
+    }
+
     @Override
     public void showTime() {
         JFrame.setDefaultLookAndFeelDecorated(true);
@@ -41,6 +45,16 @@ public class InterfaceDigital extends Interface {
 
     @Override
     public void cancelTimeOut() {
+
+    }
+
+    @Override
+    public void ring() {
+
+    }
+
+    @Override
+    public void tick() {
 
     }
 }

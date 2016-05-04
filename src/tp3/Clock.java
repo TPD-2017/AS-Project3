@@ -11,8 +11,8 @@ public class Clock {
     private int seconds;
 
     public Clock(){
-        this.analog = new InterfaceAnalog();
-        this.digital = new InterfaceDigital();
+        this.analog = new InterfaceAnalog(this);
+        this.digital = new InterfaceDigital(this);
         this.cur_interface=this.digital;
     }
 
