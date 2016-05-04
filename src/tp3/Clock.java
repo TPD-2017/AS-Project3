@@ -8,6 +8,12 @@ import tp3.warnings.Warning;
 import tp3.warnings.WarningAlarm;
 import tp3.warnings.WarningTimeOut;
 
+/***
+ * Class Clock is used to hold the data structure together, keeping state
+ * and being responsible for the basic Clock functions which cannot be left
+ * to the Warning or Interface
+ */
+
 public class Clock {
     private Interface cur_interface;
     private InterfaceAnalog analog;
