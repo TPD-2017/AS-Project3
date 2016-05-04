@@ -1,5 +1,7 @@
-package tp3;
+package tp3.interfaces;
 
+
+import tp3.Clock;
 
 public abstract class Interface {
 

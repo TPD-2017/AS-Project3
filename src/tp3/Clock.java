@@ -1,6 +1,10 @@
 package tp3;
 
 
+import tp3.interfaces.Interface;
+import tp3.interfaces.InterfaceAnalog;
+import tp3.interfaces.InterfaceDigital;
+
 public class Clock {
     private Interface cur_interface;
     private InterfaceAnalog analog;
