@@ -20,7 +20,7 @@ public abstract class Warning {
     private int hour=0;
     private int minutes=0;
     private int seconds=0;
-    private boolean done=true;
+    private boolean set=false;
 
     public Warning(Clock clock){
         this.clock=clock;
@@ -60,11 +60,11 @@ public abstract class Warning {
         this.seconds = seconds;
     }
 
-    public boolean isDone() {
-        return done;
+    public boolean isSet() {
+        return set;
     }
 
-    public void setDone(boolean done) {
-        this.done = done;
+    public void setSet(boolean set) {
+        this.set = set;
     }
 }

@@ -12,42 +12,46 @@ public class WarningAlarm extends Warning {
 
     @Override
     public void createWarning(int hour, int minutes, int seconds) {
-        if(this.isDone()) {
+        if(!this.isSet()) {
             this.setHour(hour);
             this.setMinutes(minutes);
             this.setSeconds(seconds);
-            this.setDone(false);
+            this.setSet(false);
         } else {
-            System.out.println(">>Error: Alarm already created.");
+            System.out.println(">>Error: Alarm already set.");
         }
     }
 
     @Override
     public void adjustWarning(int hour, int minutes, int seconds) {
-        if(!this.isDone()){
+        if(this.isSet()){
             this.setHour(hour);
             this.setMinutes(minutes);
             this.setSeconds(seconds);
         } else {
-            System.out.println(">>Error: Alarm not created yet.");
+            System.out.println(">>Error: Alarm not set.");
         }
     }
 
     @Override
     public void cancelWarning() {
-        if(!this.isDone()){
+        if(this.isSet()){
             this.setHour(0);
             this.setMinutes(0);
             this.setSeconds(0);
-            this.setDone(true);
+            this.setSet(true);
         } else {
-            System.out.println(">>Error: Alarm not created yet.");
+            System.out.println(">>Error: Alarm not set.");
         }
     }
 
     @Override
     public void tryRing() {
+        if(this.isSet()){
 
+        } else {
+            System.out.println(">>Error: Alarm not set.");
+        }
     }
 
     @Override
