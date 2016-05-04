@@ -11,4 +11,10 @@ public abstract class Warning {
     public Warning(Clock clock){
         this.clock=clock;
     }
+
+    public abstract void createWarning();
+
+    public abstract void adjustWarning();
+
+    public abstract void cancelWarning();
 }
