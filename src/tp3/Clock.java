@@ -8,6 +8,8 @@ import tp3.warnings.Warning;
 import tp3.warnings.WarningAlarm;
 import tp3.warnings.WarningTimeOut;
 
+import java.util.Calendar;
+
 /***
  * Class Clock is used to hold the data structure together, keeping state
  * and being responsible for the basic Clock functions which cannot be left
@@ -15,17 +17,29 @@ import tp3.warnings.WarningTimeOut;
  */
 
 public class Clock {
+
+    /*
+    private int hour=0;
+    private int minutes=0;
+    private int seconds=0;
+    */
+
+    private Calendar cal;
+
+
+    /***
+     * Design Pattern Observer
+     */
     private Interface cur_interface;
     private InterfaceAnalog analog;
     private InterfaceDigital digital;
 
+    /***
+     * Design Pattern State
+     */
     private Warning cur_warning;
     private WarningAlarm alarm;
     private WarningTimeOut timeOut;
-
-    private int hour;
-    private int minutes;
-    private int seconds;
 
     public Clock(int hour, int minutes, int seconds){
         this.setHour(hour);

@@ -34,6 +34,17 @@ public class WarningAlarm extends Warning {
     }
 
     @Override
+    public void changeWarning() {
+        if(this.isSet()){
+            this.setSet(false);
+            this.setHour(0);
+            this.setMinutes(0);
+            this.setSeconds(0);
+        }
+        this.clock.setCur_warning(this.clock.getTimeOut());
+    }
+
+    @Override
     public void cancelWarning() {
         if(this.isSet()){
             this.setHour(0);
@@ -59,9 +70,9 @@ public class WarningAlarm extends Warning {
     }
 
     @Override
-    public void ring() {
-        System.out.println(">>Alarm is ringing.");
+    protected void ring() {
         this.setSet(false);
+        System.out.println(">>Alarm is ringing.");
         this.setHour(0);
         this.setMinutes(0);
         this.setSeconds(0);

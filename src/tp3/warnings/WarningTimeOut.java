@@ -21,6 +21,11 @@ public class WarningTimeOut extends Warning {
     }
 
     @Override
+    public void changeWarning() {
+
+    }
+
+    @Override
     public void cancelWarning() {
 
     }
@@ -31,7 +36,7 @@ public class WarningTimeOut extends Warning {
     }
 
     @Override
-    public void ring() {
+    protected void ring() {
 
     }
 }

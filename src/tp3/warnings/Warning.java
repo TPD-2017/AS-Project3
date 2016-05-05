@@ -15,7 +15,7 @@ import tp3.Clock;
  * and alarm and a timer set and running at the same time.
  */
 public abstract class Warning {
-    private Clock clock;
+    protected Clock clock;
 
     private int hour=0;
     private int minutes=0;
@@ -30,45 +30,47 @@ public abstract class Warning {
 
     public abstract void adjustWarning(int hour, int minutes, int seconds);
 
+    public abstract void changeWarning();
+
     public abstract void cancelWarning();
 
     public abstract void tryRing();
 
-    public abstract void ring();
+    protected abstract void ring();
 
-    public int getHour() {
+    protected int getHour() {
         return hour;
     }
 
-    public void setHour(int hour) {
+    protected void setHour(int hour) {
         this.hour = hour;
     }
 
-    public int getMinutes() {
+    protected int getMinutes() {
         return minutes;
     }
 
-    public void setMinutes(int minutes) {
+    protected void setMinutes(int minutes) {
         this.minutes = minutes;
     }
 
-    public int getSeconds() {
+    protected int getSeconds() {
         return seconds;
     }
 
-    public void setSeconds(int seconds) {
+    protected void setSeconds(int seconds) {
         this.seconds = seconds;
     }
 
-    public boolean isSet() {
+    protected boolean isSet() {
         return set;
     }
 
-    public void setSet(boolean set) {
+    protected void setSet(boolean set) {
         this.set = set;
     }
 
-    public Clock getClock() {
+    protected Clock getClock() {
         return clock;
     }
 }
