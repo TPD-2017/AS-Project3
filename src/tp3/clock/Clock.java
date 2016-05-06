@@ -26,6 +26,10 @@ public class Clock {
 
     private Calendar cal = Calendar.getInstance();
 
+    /***
+     * Design Pattern State
+     */
+    private ClockState state;
 
     /***
      * Design Pattern Observer
