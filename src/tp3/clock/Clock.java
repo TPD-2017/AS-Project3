@@ -4,6 +4,8 @@ package tp3.clock;
 import tp3.clock.interfaces.Interface;
 import tp3.clock.interfaces.InterfaceAnalog;
 import tp3.clock.interfaces.InterfaceDigital;
+import tp3.clock.states.ClockStateSet;
+import tp3.clock.states.ClockStateStopped;
 import tp3.clock.warnings.Warning;
 import tp3.clock.warnings.alarm.WarningAlarm;
 import tp3.clock.warnings.timeOut.WarningTimeOut;
@@ -29,12 +31,14 @@ public class Clock {
     /***
      * Design Pattern State
      */
-    private ClockState state;
+    private ClockState state = this.stopped;
+    private ClockStateStopped stopped = new ClockStateStopped(this);
+    private ClockStateSet set = new ClockStateSet(this);
 
     /***
      * Design Pattern Observer
      */
-    private Interface cur_interface;
+    private Interface cur_interface = this.digital;
     private InterfaceAnalog analog = new InterfaceAnalog(this);
     private InterfaceDigital digital = new InterfaceDigital(this);
 
@@ -93,5 +97,21 @@ public class Clock {
 
     public Calendar getCal() {
         return cal;
+    }
+
+    public ClockState getState() {
+        return state;
+    }
+
+    public void setState(ClockState state) {
+        this.state = state;
+    }
+
+    public ClockStateStopped getStopped() {
+        return stopped;
+    }
+
+    public ClockStateSet getSet() {
+        return set;
     }
 }

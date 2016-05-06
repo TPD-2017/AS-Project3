@@ -23,4 +23,5 @@ public abstract class ClockState {
 
     public abstract void tick();
 
+    public abstract void ring();
 }
