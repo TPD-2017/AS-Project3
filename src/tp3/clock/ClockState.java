@@ -14,4 +14,13 @@ public abstract class ClockState {
     public Clock getClock() {
         return clock;
     }
+
+    public abstract void adjustTime(int second, int minute, int hour, int day, int month, int year);
+
+    public abstract void start();
+
+    public abstract void stop();
+
+    public abstract void tick();
+
 }
