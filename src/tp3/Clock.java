@@ -5,8 +5,8 @@ import tp3.interfaces.Interface;
 import tp3.interfaces.InterfaceAnalog;
 import tp3.interfaces.InterfaceDigital;
 import tp3.warnings.Warning;
-import tp3.warnings.WarningAlarm;
-import tp3.warnings.WarningTimeOut;
+import tp3.warnings.alarm.WarningAlarm;
+import tp3.warnings.timeOut.WarningTimeOut;
 
 import java.util.Calendar;
 
@@ -41,42 +41,24 @@ public class Clock {
     private WarningAlarm alarm;
     private WarningTimeOut timeOut;
 
-    public Clock(int hour, int minutes, int seconds){
-        this.setHour(hour);
-        this.setMinutes(minutes);
-        this.setSeconds(seconds);
+    public Clock(int year, int month, int day, int hour, int minutes, int seconds){
+        this.cal = Calendar.getInstance();
+        this.cal.set(Calendar.YEAR, year);
+        this.cal.set(Calendar.MONTH, month);
+        this.cal.set(Calendar.DAY_OF_MONTH, day);
+        this.cal.set(Calendar.HOUR, hour);
+        this.cal.set(Calendar.MINUTE, minutes);
+        this.cal.set(Calendar.SECOND, seconds);
 
         this.analog = new InterfaceAnalog(this);
         this.digital = new InterfaceDigital(this);
         this.cur_interface=this.getDigital();
 
+        /***
         this.alarm = new WarningAlarm(this);
         this.timeOut = new WarningTimeOut(this);
         this.cur_warning = this.getTimeOut();
-    }
-
-    public int getHour() {
-        return hour;
-    }
-
-    public int getMinutes() {
-        return minutes;
-    }
-
-    public int getSeconds() {
-        return seconds;
-    }
-
-    public void setHour(int hour) {
-        this.hour = hour;
-    }
-
-    public void setMinutes(int minutes) {
-        this.minutes = minutes;
-    }
-
-    public void setSeconds(int seconds) {
-        this.seconds = seconds;
+         */
     }
 
     public Interface getCur_interface() {
@@ -109,5 +91,13 @@ public class Clock {
 
     public WarningTimeOut getTimeOut() {
         return timeOut;
+    }
+
+    public Calendar getCal() {
+        return cal;
+    }
+
+    public void setCal(Calendar cal) {
+        this.cal = cal;
     }
 }
