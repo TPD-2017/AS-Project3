@@ -1,7 +1,7 @@
-package tp3.warnings.alarm;
+package tp3.clock.warnings.alarm;
 
-import tp3.Clock;
-import tp3.warnings.Warning;
+import tp3.clock.Clock;
+import tp3.clock.warnings.Warning;
 
 /**
  * Created by pedro on 5/4/16.

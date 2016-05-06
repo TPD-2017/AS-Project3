@@ -1,7 +1,7 @@
-package tp3.interfaces;
+package tp3.clock.interfaces;
 
 
-import tp3.Clock;
+import tp3.clock.Clock;
 
 /***
  * Class Interface and its subclasses follow the Observer design pattern

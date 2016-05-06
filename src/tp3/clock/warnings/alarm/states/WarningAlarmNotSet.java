@@ -1,8 +1,6 @@
-package tp3.warnings.alarm.states;
+package tp3.clock.warnings.alarm.states;
 
-import tp3.Clock;
-import tp3.warnings.WarningState;
-import tp3.warnings.alarm.WarningAlarm;
+import tp3.clock.warnings.WarningState;
 
 /**
  * Integração de Sistemas

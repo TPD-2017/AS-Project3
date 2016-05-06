@@ -1,6 +1,6 @@
-package tp3.warnings;
+package tp3.clock.warnings;
 
-import tp3.Clock;
+import tp3.clock.Clock;
 
 /**
  * Created by pedro on 5/4/16.

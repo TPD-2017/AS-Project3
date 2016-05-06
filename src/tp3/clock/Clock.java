@@ -1,12 +1,12 @@
-package tp3;
+package tp3.clock;
 
 
-import tp3.interfaces.Interface;
-import tp3.interfaces.InterfaceAnalog;
-import tp3.interfaces.InterfaceDigital;
-import tp3.warnings.Warning;
-import tp3.warnings.alarm.WarningAlarm;
-import tp3.warnings.timeOut.WarningTimeOut;
+import tp3.clock.interfaces.Interface;
+import tp3.clock.interfaces.InterfaceAnalog;
+import tp3.clock.interfaces.InterfaceDigital;
+import tp3.clock.warnings.Warning;
+import tp3.clock.warnings.alarm.WarningAlarm;
+import tp3.clock.warnings.timeOut.WarningTimeOut;
 
 import java.util.Calendar;
 
@@ -24,15 +24,15 @@ public class Clock {
     private int seconds=0;
     */
 
-    private Calendar cal;
+    private Calendar cal = Calendar.getInstance();
 
 
     /***
      * Design Pattern Observer
      */
     private Interface cur_interface;
-    private InterfaceAnalog analog;
-    private InterfaceDigital digital;
+    private InterfaceAnalog analog = new InterfaceAnalog(this);
+    private InterfaceDigital digital = new InterfaceDigital(this);
 
     /***
      * Design Pattern State
@@ -41,23 +41,17 @@ public class Clock {
     private WarningAlarm alarm;
     private WarningTimeOut timeOut;
 
-    public Clock(int year, int month, int day, int hour, int minutes, int seconds){
-        this.cal = Calendar.getInstance();
-        this.cal.set(Calendar.YEAR, year);
-        this.cal.set(Calendar.MONTH, month);
-        this.cal.set(Calendar.DAY_OF_MONTH, day);
-        this.cal.set(Calendar.HOUR, hour);
-        this.cal.set(Calendar.MINUTE, minutes);
-        this.cal.set(Calendar.SECOND, seconds);
-
-        this.analog = new InterfaceAnalog(this);
-        this.digital = new InterfaceDigital(this);
+    public Clock(){
         this.cur_interface=this.getDigital();
 
         /***
-        this.alarm = new WarningAlarm(this);
-        this.timeOut = new WarningTimeOut(this);
-        this.cur_warning = this.getTimeOut();
+         *
+         this.cal.set(Calendar.YEAR, year);
+         this.cal.set(Calendar.MONTH, month);
+         this.cal.set(Calendar.DAY_OF_MONTH, day);
+         this.cal.set(Calendar.HOUR, hour);
+         this.cal.set(Calendar.MINUTE, minutes);
+         this.cal.set(Calendar.SECOND, seconds);
          */
     }
 
@@ -95,9 +89,5 @@ public class Clock {
 
     public Calendar getCal() {
         return cal;
-    }
-
-    public void setCal(Calendar cal) {
-        this.cal = cal;
     }
 }

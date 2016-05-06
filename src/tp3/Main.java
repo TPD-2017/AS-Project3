@@ -1,6 +1,8 @@
 package tp3;
 
 
+import tp3.clock.Clock;
+
 import java.util.Calendar;
 import java.util.Date;
 
@@ -8,10 +10,7 @@ import static java.lang.Thread.sleep;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
-        Clock c = new Clock(10, 10, 10);
-        c.setHour(15);
-        c.setMinutes(30);
-        c.setSeconds(0);
+        Clock c = new Clock();
         //c.setCur_interface(c.getAnalog());
         c.getDigital().showTime();
 

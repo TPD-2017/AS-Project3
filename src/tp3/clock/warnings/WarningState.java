@@ -1,6 +1,4 @@
-package tp3.warnings;
-
-import tp3.warnings.Warning;
+package tp3.clock.warnings;
 
 /**
  * Integração de Sistemas
