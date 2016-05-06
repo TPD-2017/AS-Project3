@@ -36,11 +36,16 @@ public class ClockStateStopped extends ClockState {
 
     @Override
     public void tick() {
-        System.out.println(">>Clock is stopped.");
+        System.out.println(">>Cannot tick: Clock is stopped.");
     }
 
     @Override
     public void ring() {
-        System.out.println(">>Clock is stopped.");
+        System.out.println(">>Cannot ring: Clock is stopped.");
+    }
+
+    @Override
+    public void ringStop() {
+        System.out.println(">>Clock is not ringing: Clock is stopped.");
     }
 }

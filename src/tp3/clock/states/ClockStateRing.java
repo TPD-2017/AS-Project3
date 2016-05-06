@@ -8,8 +8,8 @@ import java.util.Calendar;
 /**
  * Created by pedro on 5/6/16.
  */
-public class ClockStateSet extends ClockState {
-    public ClockStateSet(Clock clock) {
+public class ClockStateRing extends ClockState {
+    public ClockStateRing(Clock clock) {
         super(clock);
     }
 
@@ -31,15 +31,16 @@ public class ClockStateSet extends ClockState {
     @Override
     public void tick() {
         this.getClock().getCal().roll(Calendar.SECOND, true);
+        //PLAY A SOUND
     }
 
     @Override
     public void ring() {
-        //SET STATE TO RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIING
+        System.out.println(">>Clock is already ringing.");
     }
 
     @Override
     public void ringStop() {
-        System.out.println(">>Clock isn't ringing.");
+        this.getClock().setState(this.getClock().getSet());
     }
 }
