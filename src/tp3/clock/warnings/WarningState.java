@@ -1,7 +1,6 @@
 package tp3.clock.warnings;
 
 /**
- * Integração de Sistemas
  * Pedro Filipe Dinis Stamm de Matos, 2009116927
  */
 public abstract class WarningState {
@@ -12,11 +11,11 @@ public abstract class WarningState {
 
     public abstract void adjustWarning(int hour, int minutes, int seconds);
 
-    public abstract void changeWarning();
-
     public abstract void cancelWarning();
 
     public abstract void tryRing();
 
-    protected abstract void ring();
+    public Warning getWarning() {
+        return warning;
+    }
 }

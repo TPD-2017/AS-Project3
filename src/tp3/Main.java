@@ -10,6 +10,7 @@ import static java.lang.Thread.sleep;
 
 public class Main {
     public static void main(String[] args) throws InterruptedException {
+        /*NOTHING RUNS AND I AM VERY SAD
         Clock c = new Clock();
         //c.setCur_interface(c.getAnalog());
         c.getDigital().showTime();
@@ -24,5 +25,6 @@ public class Main {
         cal.roll(Calendar.SECOND, true);
         cur = cal.getTime();
         System.out.println(cur.toString());
+        */
     }
 }

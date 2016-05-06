@@ -2,19 +2,19 @@ package tp3.clock.warnings.alarm;
 
 import tp3.clock.Clock;
 import tp3.clock.warnings.Warning;
+import tp3.clock.warnings.alarm.states.WarningAlarmStateNotSet;
+import tp3.clock.warnings.alarm.states.WarningAlarmStateSet;
 
 /**
  * Created by pedro on 5/4/16.
  */
 public abstract class WarningAlarm extends Warning {
 
-    private int hour;
-    private int minute;
-    private int second;
+    private WarningAlarmStateNotSet notSet = new WarningAlarmStateNotSet();
+    private WarningAlarmStateSet set = new WarningAlarmStateSet();
 
-    private WarningAlarm state;
-
-    public WarningAlarm(Clock clock, int hour, int  minute, int second) {
+    public WarningAlarm(Clock clock) {
         super(clock);
+        this.setState(this.notSet);
     }
 }
