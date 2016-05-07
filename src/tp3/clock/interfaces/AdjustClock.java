@@ -11,6 +11,9 @@ public class AdjustClock extends JPanel {
     private int currentSecond;
     private int currentMinute;
     private int currentHour;
+    private int currentDay;
+    private int currentMonth;
+    private int currentYear;
     Clock c;
 
     public void pintar(Clock clock){
@@ -20,6 +23,9 @@ public class AdjustClock extends JPanel {
         currentSecond = c.getCal().get(Calendar.SECOND);
         currentMinute = c.getCal().get(Calendar.MINUTE);
         currentHour = c.getCal().get(Calendar.HOUR_OF_DAY);
+        currentDay = c.getCal().get(Calendar.DAY_OF_MONTH);
+        currentMonth = c.getCal().get(Calendar.MONTH);
+        currentYear = c.getCal().get(Calendar.YEAR);
     }
 
     public void update(Graphics g)
@@ -45,8 +51,8 @@ public class AdjustClock extends JPanel {
         g.setColor(Color.black);
         g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,255);
 
-        if (currentMinute==22){
-            this.c.getState().adjustTime(0, 0, 0, 0, 0, 0);
+        if (currentMinute==5){
+            this.c.getState().adjustTime(currentSecond, currentMinute, currentHour-1, currentDay, currentMonth, currentYear);
         }
     }
 }
