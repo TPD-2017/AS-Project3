@@ -14,6 +14,7 @@ public abstract class Warning {
     private int hour=0;
     private int minute=0;
     private int second=0;
+    private double timeLeft=0;
 
     private WarningState state;
     private WarningState set;
@@ -73,5 +74,13 @@ public abstract class Warning {
 
     public void setNotSet(WarningState notSet) {
         this.notSet = notSet;
+    }
+
+    public double getTimeLeft() {
+        return timeLeft;
+    }
+
+    public void setTimeLeft(double timeLeft) {
+        this.timeLeft = timeLeft;
     }
 }
