@@ -25,69 +25,18 @@ public class InterfaceDigital extends Interface {
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
         window.getContentPane().add(digitalclock);
         window.setVisible(true);
-        digitalclock.start();
+        //digitalclock.start();
+    }
+
+    @Override
+    public void redraw() {
+        digitalclock.pintar();
     }
 
     @Override
     public void killinterface() {
         window.getContentPane().removeAll();
-        digitalclock.stop();
+        //digitalclock.stop();
     }
 }
 
-class DigitalClock extends JPanel implements Runnable {
-    private Thread thread = null;
-
-    public void start()
-    {
-        if (thread == null)
-        {
-            thread = new Thread(this);
-            thread.start();
-        }
-    }
-    public void stop()
-    {
-        thread = null;
-    }
-    public void run()
-    {
-        while (thread != null) {
-            try {
-                Thread.sleep(100);
-            }
-            catch (InterruptedException e)
-            {}
-            repaint();
-            revalidate();
-        }
-        thread = null;
-    }
-    public void update(Graphics g)
-    {
-        paint(g);
-    }
-
-    public void drawStructure(Graphics g) {
-        g.setFont(new Font("TimesRoman", Font.BOLD, 20));
-        g.setColor(Color.black);
-        g.drawString("Digital Clock",175,35);
-        int day = Calendar.getInstance().get(Calendar.DAY_OF_MONTH);
-        int month = Calendar.getInstance().get(Calendar.MONTH);
-        month++;
-        int year = Calendar.getInstance().get(Calendar.YEAR);
-        g.drawString(day+" - "+month+" - "+year,180,65);
-    }
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        drawStructure(g);
-        int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
-        int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
-        int currentHour = Calendar.getInstance().get(Calendar.HOUR);
-
-        g.setFont(new Font("TimesRoman", Font.PLAIN, 55));
-        g.setColor(Color.black);
-        g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,255);
-    }
-}

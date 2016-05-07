@@ -39,7 +39,7 @@ public class Clock implements Runnable {
     /***
      * Design Pattern Observer
      */
-    private Interface cur_interface = this.digital;
+    private Interface cur_interface;
     private InterfaceAnalog analog = new InterfaceAnalog(this);
     private InterfaceDigital digital = new InterfaceDigital(this);
     private InterfaceAdjust adjust = new InterfaceAdjust(this);
@@ -55,7 +55,7 @@ public class Clock implements Runnable {
     private WarningTimeOut timeOut;
 
     public Clock(){
-        this.cur_interface=this.getDigital();
+        this.setCur_interface(this.getAnalog());
         this.setState(this.getSet());
         /***
          *
@@ -74,6 +74,7 @@ public class Clock implements Runnable {
 
     public void setCur_interface(Interface cur_interface) {
         this.cur_interface = cur_interface;
+        this.cur_interface.showInterface();
     }
 
     public InterfaceAnalog getAnalog() {
@@ -140,8 +141,9 @@ public class Clock implements Runnable {
     public void run() {
         try {
             while (true) {
-                sleep(1000);
+                sleep(100);
                 this.getState().tick();
+                this.getCur_interface().redraw();
             }
         } catch (Exception e){
             e.printStackTrace();

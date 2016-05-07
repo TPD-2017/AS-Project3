@@ -5,9 +5,7 @@ import tp3.clock.ClockState;
 
 import java.util.Calendar;
 
-/**
- * Created by pedro on 5/6/16.
- */
+
 public class ClockStateSet extends ClockState {
     public ClockStateSet(Clock clock) {
         super(clock);
@@ -31,7 +29,6 @@ public class ClockStateSet extends ClockState {
     @Override
     public void tick() {
         this.getClock().getCal().roll(Calendar.SECOND, true);
-        this.getClock().getCur_interface().showInterface();
     }
 
     @Override

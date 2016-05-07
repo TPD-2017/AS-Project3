@@ -23,64 +23,15 @@ public class InterfaceTimeOut extends Interface {
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
         window.getContentPane().add(timeoutclock);
         window.setVisible(true);
-        timeoutclock.start();
+    }
+
+    public void redraw(){
+        timeoutclock.pintar();
     }
 
     @Override
     public void killinterface() {
         window.getContentPane().removeAll();
-        timeoutclock.stop();
     }
 }
 
-class TimeOutClock extends JPanel implements Runnable {
-    private Thread thread = null;
-
-    public void start()
-    {
-        if (thread == null)
-        {
-            thread = new Thread(this);
-            thread.start();
-        }
-    }
-    public void stop()
-    {
-        thread = null;
-    }
-    public void run()
-    {
-        while (thread != null) {
-            try {
-                Thread.sleep(100);
-            }
-            catch (InterruptedException e)
-            {}
-            repaint();
-            revalidate();
-        }
-        thread = null;
-    }
-    public void update(Graphics g)
-    {
-        paint(g);
-    }
-
-    public void drawStructure(Graphics g) {
-        g.setFont(new Font("TimesRoman", Font.BOLD, 20));
-        g.setColor(Color.black);
-        g.drawString("Set TimeOut",175,35);
-    }
-
-    public void paint(Graphics g) {
-        super.paint(g);
-        drawStructure(g);
-        /*int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
-        int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
-        int currentHour = Calendar.getInstance().get(Calendar.HOUR);
-
-        g.setFont(new Font("TimesRoman", Font.PLAIN, 55));
-        g.setColor(Color.black);
-        g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,255);*/
-    }
-}
