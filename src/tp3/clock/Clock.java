@@ -126,7 +126,7 @@ public class Clock implements Runnable {
     @Override
     public void run() {
         try {
-            while (1) {
+            while (true) {
                 sleep(1000);
                 this.getState().tick();
             }
