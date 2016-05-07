@@ -11,15 +11,7 @@ public class AdjustClock extends JPanel {
     private int currentMinute;
     private int currentHour;
 
-    public void pintar(Clock c, JFrame w){
-        repaint();
-        validate();
-        JTextArea textAreaH = new JTextArea();
-        JTextArea textAreaM = new JTextArea();
-        JTextArea textAreaS = new JTextArea();
-        textAreaH.setSize(30, 30);
-        w.getContentPane().add(textAreaH);
-        w.setVisible(true);
+    public void pintar(Clock c, JTextArea textAreaH, JTextArea textAreaM, JTextArea textAreaS){
         String h = textAreaH.getText();
         String m = textAreaM.getText();
         String s = textAreaS.getText();
@@ -29,6 +21,8 @@ public class AdjustClock extends JPanel {
             currentSecond = Integer.parseInt(s);
             c.getState().adjustTime(currentSecond, currentMinute, currentHour, 0, 0, 0);
         }
+        repaint();
+        validate();
     }
 
     public void update(Graphics g)
