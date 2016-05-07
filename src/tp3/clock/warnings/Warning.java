@@ -2,9 +2,6 @@ package tp3.clock.warnings;
 
 import tp3.clock.Clock;
 
-/**
- * Created by pedro on 5/4/16.
- */
 
 /***
  * Warning and its subclasses follow the State design pattern, making it so

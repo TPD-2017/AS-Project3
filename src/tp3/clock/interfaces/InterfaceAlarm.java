@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class InterfaceAlarm extends Interface {
-    JFrame window;
-    AlarmClock alarmclock = new AlarmClock();
+    private JFrame window;
+    private AlarmClock alarmclock = new AlarmClock();
     public InterfaceAlarm(Clock clock) {
         super(clock);
     }

@@ -7,7 +7,6 @@ import java.awt.*;
 import java.util.Calendar;
 
 public class AnalogClock extends JPanel {
-    private Thread thread = null;
     private int xcenter = 240, ycenter = 240;
     private int lastxs = 0, lastys = 0, lastxm = 0, lastym = 0, lastxh = 0,lastyh = 0;
 
@@ -28,7 +27,7 @@ public class AnalogClock extends JPanel {
         paint(g);
     }
 
-    public void drawStructure(Graphics g) {
+    private void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.white);
         g.fillOval(xcenter - 150, ycenter - 150, 300, 300);

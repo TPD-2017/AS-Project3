@@ -2,9 +2,7 @@ package tp3.clock.warnings.alarm.states;
 
 import tp3.clock.warnings.WarningState;
 
-/**
- * Created by pedro on 5/6/16.
- */
+
 public class WarningAlarmStateSet extends WarningState {
     @Override
     public void createWarning(int hour, int minutes, int seconds) {

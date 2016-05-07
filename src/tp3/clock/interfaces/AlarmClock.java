@@ -15,7 +15,7 @@ public class AlarmClock extends JPanel {
         paint(g);
     }
 
-    public void drawStructure(Graphics g) {
+    private void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.black);
         g.drawString("Set Alarm",175,35);

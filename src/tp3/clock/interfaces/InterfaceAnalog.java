@@ -5,13 +5,12 @@ import tp3.clock.Clock;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Calendar;
 
 
 public class InterfaceAnalog extends Interface {
 
-    AnalogClock analogclock = new AnalogClock();
-    JFrame window;
+    private AnalogClock analogclock = new AnalogClock();
+    private JFrame window;
     public InterfaceAnalog(Clock clock) {
         super(clock);
     }

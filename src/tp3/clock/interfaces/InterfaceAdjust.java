@@ -4,12 +4,10 @@ package tp3.clock.interfaces;
 import tp3.clock.Clock;
 
 import javax.swing.*;
-import java.awt.*;
-import java.util.Calendar;
 
 public class InterfaceAdjust extends Interface {
-    JFrame window;
-    AdjustClock adjustclock = new AdjustClock();
+    private JFrame window;
+    private AdjustClock adjustclock = new AdjustClock();
 
     public InterfaceAdjust(Clock clock) {
         super(clock);

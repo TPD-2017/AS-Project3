@@ -6,9 +6,7 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
 
-public class DigitalClock extends JPanel /*implements Runnable*/ {
-    private Thread thread = null;
-
+public class DigitalClock extends JPanel {
 
     private int currentSecond;
     private int currentMinute;
@@ -27,7 +25,7 @@ public class DigitalClock extends JPanel /*implements Runnable*/ {
         paint(g);
     }
 
-    public void drawStructure(Graphics g) {
+    private void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.black);
         g.drawString("Digital Clock",175,35);

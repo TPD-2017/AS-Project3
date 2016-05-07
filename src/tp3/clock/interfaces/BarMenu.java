@@ -91,7 +91,7 @@ public class BarMenu {
 
         //a group of radio button menu items
         menu.addSeparator();
-        ButtonGroup group2 = new ButtonGroup();
+        //ButtonGroup group2 = new ButtonGroup();
         rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("Start") {
             @Override
             public void actionPerformed(ActionEvent e) {

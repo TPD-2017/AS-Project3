@@ -6,8 +6,8 @@ import javax.swing.*;
 import java.awt.*;
 
 public class InterfaceTimeOut extends Interface {
-    JFrame window;
-    TimeOutClock timeoutclock = new TimeOutClock();
+    private JFrame window;
+    private TimeOutClock timeoutclock = new TimeOutClock();
     public InterfaceTimeOut(Clock clock) {
         super(clock);
     }

@@ -5,9 +5,7 @@ import tp3.clock.warnings.Warning;
 import tp3.clock.warnings.alarm.states.WarningAlarmStateNotSet;
 import tp3.clock.warnings.alarm.states.WarningAlarmStateSet;
 
-/**
- * Created by pedro on 5/4/16.
- */
+
 public abstract class WarningAlarm extends Warning {
 
     private WarningAlarmStateNotSet notSet = new WarningAlarmStateNotSet();

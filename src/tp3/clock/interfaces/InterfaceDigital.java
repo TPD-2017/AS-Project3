@@ -8,8 +8,8 @@ import java.awt.*;
 import java.util.Calendar;
 
 public class InterfaceDigital extends Interface {
-    JFrame window;
-    DigitalClock digitalclock = new DigitalClock();
+    private JFrame window;
+    private DigitalClock digitalclock = new DigitalClock();
     public InterfaceDigital(Clock clock) {
         super(clock);
     }

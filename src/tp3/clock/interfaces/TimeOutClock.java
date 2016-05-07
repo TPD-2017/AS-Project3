@@ -15,7 +15,7 @@ public class TimeOutClock extends JPanel {
         paint(g);
     }
 
-    public void drawStructure(Graphics g) {
+    private void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.black);
         g.drawString("Set TimeOut",175,35);
