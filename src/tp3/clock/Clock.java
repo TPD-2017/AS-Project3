@@ -56,7 +56,7 @@ public class Clock implements Runnable {
 
     public Clock(){
         this.setCur_interface(this.getAnalog());
-        this.setState(this.getSet());
+        this.setState(this.getStopped());
         /***
          *
          this.cal.set(Calendar.YEAR, year);

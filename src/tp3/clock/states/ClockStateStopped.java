@@ -26,6 +26,7 @@ public class ClockStateStopped extends ClockState {
 
     @Override
     public void start() {
+        System.out.println("Start");
         this.getClock().setState(this.getClock().getSet());
     }
 
@@ -36,7 +37,7 @@ public class ClockStateStopped extends ClockState {
 
     @Override
     public void tick() {
-        System.out.println(">>Cannot tick: Clock is stopped.");
+        /*System.out.println(">>Cannot tick: Clock is stopped.");*/
     }
 
     @Override

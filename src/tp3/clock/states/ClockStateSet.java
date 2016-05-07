@@ -23,6 +23,7 @@ public class ClockStateSet extends ClockState {
 
     @Override
     public void stop() {
+        System.out.println("Stop");
         this.getClock().setState(this.getClock().getStopped());
     }
 
