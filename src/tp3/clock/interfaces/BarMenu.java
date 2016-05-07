@@ -115,7 +115,7 @@ public class BarMenu {
         rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("StopRinging") {
             @Override
             public void actionPerformed(ActionEvent e) {
-                //c.setState(c.get;
+                c.getState().ringStop();
             }
         });
         rbMenuItem.setMnemonic(KeyEvent.VK_R);
