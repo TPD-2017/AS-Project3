@@ -1,9 +1,7 @@
 package tp3.clock;
 
 
-import tp3.clock.interfaces.Interface;
-import tp3.clock.interfaces.InterfaceAnalog;
-import tp3.clock.interfaces.InterfaceDigital;
+import tp3.clock.interfaces.*;
 import tp3.clock.states.ClockStateSet;
 import tp3.clock.states.ClockStateStopped;
 import tp3.clock.warnings.Warning;
@@ -42,6 +40,9 @@ public class Clock {
     private Interface cur_interface = this.digital;
     private InterfaceAnalog analog = new InterfaceAnalog(this);
     private InterfaceDigital digital = new InterfaceDigital(this);
+    private InterfaceAdjust adjust = new InterfaceAdjust(this);
+    private InterfaceAlarm i_alarm = new InterfaceAlarm(this);
+    private InterfaceTimeOut i_timeout = new InterfaceTimeOut(this);
     private JFrame window = new JFrame();
 
     /***
@@ -119,5 +120,17 @@ public class Clock {
 
     public JFrame getWindow() {
         return window;
+    }
+
+    public InterfaceAdjust getAdjust() {
+        return adjust;
+    }
+
+    public InterfaceAlarm getI_alarm() {
+        return i_alarm;
+    }
+
+    public InterfaceTimeOut getI_timeout() {
+        return i_timeout;
     }
 }

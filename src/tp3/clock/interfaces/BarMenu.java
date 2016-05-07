@@ -52,7 +52,7 @@ public class BarMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c.getCur_interface().killinterface();
-                //c.getAdjust().showInterface();
+                c.getAdjust().showInterface();
             }
         });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
@@ -63,7 +63,7 @@ public class BarMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c.getCur_interface().killinterface();
-                //c.getAlarm().showInterface();
+                c.getI_alarm().showInterface();
             }
         });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
@@ -74,7 +74,7 @@ public class BarMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c.getCur_interface().killinterface();
-                //c.getTimeOut().showInterface();
+                c.getI_timeout().showInterface();
             }
         });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);

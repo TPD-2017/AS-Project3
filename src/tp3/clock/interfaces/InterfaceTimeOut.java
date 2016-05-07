@@ -1,41 +1,39 @@
 package tp3.clock.interfaces;
 
-
 import tp3.clock.Clock;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Calendar;
 
-public class InterfaceAdjust extends Interface {
+public class InterfaceTimeOut extends Interface {
     JFrame window;
-    AdjustClock adjustclock = new AdjustClock();
-    public InterfaceAdjust(Clock clock) {
+    TimeOutClock timeoutclock = new TimeOutClock();
+    public InterfaceTimeOut(Clock clock) {
         super(clock);
     }
 
     @Override
     public void showInterface() {
         window = this.getClock().getWindow();
-        //window.setBackground(Color.black);
+        window.setBackground(Color.white);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(500, 500);
 
         BarMenu menuBar = new BarMenu();
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
-        window.getContentPane().add(adjustclock);
+        window.getContentPane().add(timeoutclock);
         window.setVisible(true);
-        adjustclock.start();
+        timeoutclock.start();
     }
 
     @Override
     public void killinterface() {
         window.getContentPane().removeAll();
-        adjustclock.stop();
+        timeoutclock.stop();
     }
 }
 
-class AdjustClock extends JPanel implements Runnable {
+class TimeOutClock extends JPanel implements Runnable {
     private Thread thread = null;
 
     public void start()
@@ -71,7 +69,7 @@ class AdjustClock extends JPanel implements Runnable {
     public void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.black);
-        g.drawString("Ajust Clock",175,35);
+        g.drawString("Set TimeOut",175,35);
     }
 
     public void paint(Graphics g) {
@@ -86,4 +84,3 @@ class AdjustClock extends JPanel implements Runnable {
         g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,255);*/
     }
 }
-
