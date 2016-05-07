@@ -13,13 +13,15 @@ import tp3.clock.warnings.timeOut.WarningTimeOut;
 import javax.swing.*;
 import java.util.Calendar;
 
+import static java.lang.Thread.sleep;
+
 /***
  * Class Clock is used to hold the data structure together, keeping state
  * and being responsible for the basic Clock functions which cannot be left
  * to the Warning or Interface
  */
 
-public class Clock {
+public class Clock implements Runnable {
 
     /*
     private int hour=0;
@@ -119,5 +121,17 @@ public class Clock {
 
     public JFrame getWindow() {
         return window;
+    }
+
+    @Override
+    public void run() {
+        try {
+            while (1) {
+                sleep(1000);
+                this.getState().tick();
+            }
+        } catch (Exception e){
+            e.printStackTrace();
+        }
     }
 }

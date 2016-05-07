@@ -15,6 +15,8 @@ public abstract class WarningAlarm extends Warning {
 
     public WarningAlarm(Clock clock) {
         super(clock);
+        this.setSet(new WarningAlarmStateSet());
+        this.setNotSet(new WarningAlarmStateNotSet());
         this.setState(this.notSet);
     }
 }
