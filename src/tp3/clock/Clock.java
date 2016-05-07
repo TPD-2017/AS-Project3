@@ -32,7 +32,7 @@ public class Clock implements Runnable {
     /***
      * Design Pattern State
      */
-    private ClockState state = this.stopped;
+    private ClockState state;
     private ClockStateStopped stopped = new ClockStateStopped(this);
     private ClockStateSet set = new ClockStateSet(this);
 
@@ -56,7 +56,7 @@ public class Clock implements Runnable {
 
     public Clock(){
         this.cur_interface=this.getDigital();
-
+        this.setState(this.getSet());
         /***
          *
          this.cal.set(Calendar.YEAR, year);

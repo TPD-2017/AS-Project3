@@ -12,8 +12,8 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
         /*NOTHING RUNS AND I AM VERY SAD */
         Clock c = new Clock();
-        c.setCur_interface(c.getAnalog());
-        c.getAnalog().showInterface();
+        Thread t = new Thread(c);
+        t.start();
         /*c.setCur_interface(c.getAnalog());
         c.getDigital().showTime();
 

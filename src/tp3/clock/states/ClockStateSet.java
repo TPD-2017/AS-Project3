@@ -31,6 +31,7 @@ public class ClockStateSet extends ClockState {
     @Override
     public void tick() {
         this.getClock().getCal().roll(Calendar.SECOND, true);
+        this.getClock().getCur_interface().showInterface();
     }
 
     @Override
