@@ -7,6 +7,9 @@ import javax.swing.*;
 
 public class InterfaceAdjust extends Interface {
     private JFrame window;
+    JTextArea textAreaH = new JTextArea(1, 1);
+    JTextArea textAreaM = new JTextArea(10, 10);
+    JTextArea textAreaS = new JTextArea(20, 20);
     private AdjustClock adjustclock = new AdjustClock();
 
     public InterfaceAdjust(Clock clock) {
@@ -23,13 +26,13 @@ public class InterfaceAdjust extends Interface {
         BarMenu menuBar = new BarMenu();
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
         window.getContentPane().add(adjustclock);
-        //window.getContentPane().add(textFieldH);
+        window.getContentPane().add(textAreaH);
         window.setVisible(true);
     }
 
     @Override
     public void redraw() {
-        adjustclock.pintar(this.getClock(), this.getClock().getWindow());
+        adjustclock.pintar(this.getClock(), textAreaH, textAreaM, textAreaS);
     }
 
     @Override
