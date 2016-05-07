@@ -23,12 +23,13 @@ public class InterfaceAdjust extends Interface {
         BarMenu menuBar = new BarMenu();
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
         window.getContentPane().add(adjustclock);
+        //window.getContentPane().add(textFieldH);
         window.setVisible(true);
     }
 
     @Override
     public void redraw() {
-        adjustclock.pintar();
+        adjustclock.pintar(this.getClock(), this.getClock().getWindow());
     }
 
     @Override
