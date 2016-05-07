@@ -1,5 +1,6 @@
 package tp3.clock.warnings.alarm.states;
 
+import tp3.clock.warnings.Warning;
 import tp3.clock.warnings.WarningState;
 
 /**
@@ -7,12 +8,16 @@ import tp3.clock.warnings.WarningState;
  */
 public class WarningAlarmStateNotSet extends WarningState {
 
+    public WarningAlarmStateNotSet(Warning warning) {
+        super(warning);
+    }
+
     @Override
     public void createWarning(int hour, int minutes, int seconds) {
         this.getWarning().setHour(hour);
         this.getWarning().setMinute(minutes);
         this.getWarning().setSecond(seconds);
-        //this.getWarning().setState(this.getWarning().get)
+        this.getWarning().setState(this.getWarning().getSet());
     }
 
     @Override

@@ -9,7 +9,7 @@ import tp3.clock.Clock;
  * or how it functions internally.
  */
 public abstract class Warning {
-    protected Clock clock;
+    private Clock clock;
 
     private int hour=0;
     private int minute=0;
@@ -23,7 +23,7 @@ public abstract class Warning {
         this.clock=clock;
     }
 
-    protected Clock getClock() {
+    public Clock getClock() {
         return clock;
     }
 

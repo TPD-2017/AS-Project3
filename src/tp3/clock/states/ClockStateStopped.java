@@ -17,7 +17,7 @@ public class ClockStateStopped extends ClockState {
     public void adjustTime(int second, int minute, int hour, int day, int month, int year) {
         this.getClock().getCal().set(Calendar.SECOND, second);
         this.getClock().getCal().set(Calendar.MINUTE, minute);
-        this.getClock().getCal().set(Calendar.HOUR, hour);
+        this.getClock().getCal().set(Calendar.HOUR_OF_DAY, hour);
         this.getClock().getCal().set(Calendar.DAY_OF_MONTH, day);
         this.getClock().getCal().set(Calendar.MONTH, month);
         this.getClock().getCal().set(Calendar.YEAR, year);
