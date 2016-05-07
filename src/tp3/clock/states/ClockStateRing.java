@@ -1,8 +1,12 @@
 package tp3.clock.states;
 
+import sun.audio.AudioPlayer;
+import sun.audio.AudioStream;
 import tp3.clock.Clock;
 import tp3.clock.ClockState;
 
+import java.io.FileInputStream;
+import java.io.InputStream;
 import java.util.Calendar;
 
 /**
@@ -33,7 +37,7 @@ public class ClockStateRing extends ClockState {
         this.getClock().getCal().add(Calendar.SECOND, 1);
         this.getClock().getAlarm().getState().tryRing();
         this.getClock().getTimeOut().getState().tryRing();
-        System.out.println(">>>>>>>>>IT'S RINGING<<<<<<<<<<<");
+        System.out.println(">>>>>>>>IT'S RINGING<<<<<<<<");
     }
 
     @Override

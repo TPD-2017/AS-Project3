@@ -21,7 +21,6 @@ public class ClockStateStopped extends ClockState {
         this.getClock().getCal().set(Calendar.DAY_OF_MONTH, day);
         this.getClock().getCal().set(Calendar.MONTH, month);
         this.getClock().getCal().set(Calendar.YEAR, year);
-
     }
 
     @Override
@@ -37,7 +36,7 @@ public class ClockStateStopped extends ClockState {
 
     @Override
     public void tick() {
-        /*System.out.println(">>Cannot tick: Clock is stopped.");*/
+        System.out.println(">>Cannot tick: Clock is stopped.");
     }
 
     @Override

@@ -52,13 +52,12 @@ public class Clock implements Runnable {
     /***
      * Design Pattern State
      */
-    private Warning cur_warning;
     private WarningAlarm alarm = new WarningAlarm(this);
     private WarningTimeOut timeOut = new WarningTimeOut(this);
 
     public Clock(){
         this.setCur_interface(this.getAnalog());
-        this.setState(this.getStopped());
+        this.setState(this.getSet());
         /***
          *
          this.cal.set(Calendar.YEAR, year);
@@ -85,14 +84,6 @@ public class Clock implements Runnable {
 
     public InterfaceDigital getDigital() {
         return digital;
-    }
-
-    public Warning getCur_warning() {
-        return cur_warning;
-    }
-
-    public void setCur_warning(Warning cur_warning) {
-        this.cur_warning = cur_warning;
     }
 
     public WarningAlarm getAlarm() {

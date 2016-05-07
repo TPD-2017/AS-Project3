@@ -44,26 +44,22 @@ public class TimeOutClock extends JPanel {
         g.setFont(new Font("TimesRoman", Font.PLAIN, 55));
         g.setColor(Color.black);
         g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,200);
-
-        if (currentMinute%2==0)
-        {
-            try {
-                if (!timeoutstart)
-                {
-                    this.c.getTimeOut().getState().createWarning(0, 0, 10);
-                    timeoutstart=true;
-                }
-                double timeLeft = this.c.getTimeOut().getTimeLeft();
-                int timeoutHour = (int) (timeLeft/3600);
-                int timeoutMinute = (int) ((timeLeft%3600)/60);
-                int timeoutSecond = (int) (timeLeft%60);
-                g.drawString(timeoutHour+" : "+timeoutMinute+" : "+timeoutSecond,135,295);
-                if (timeLeft==0.0) {
-                    timeoutstart = false;
-                }
-            } catch (NullPointerException e)
+        try {
+            if (!timeoutstart)
             {
+                this.c.getTimeOut().getState().createWarning(0, 0, 10);
+                timeoutstart=true;
             }
+            double timeLeft = this.c.getTimeOut().getTimeLeft();
+            int timeoutHour = (int) (timeLeft/3600);
+            int timeoutMinute = (int) ((timeLeft%3600)/60);
+            int timeoutSecond = (int) (timeLeft%60);
+            g.drawString(timeoutHour+" : "+timeoutMinute+" : "+timeoutSecond,135,295);
+            if (timeLeft==0.0) {
+                timeoutstart = false;
+            }
+        } catch (Exception e){
+                e.printStackTrace();
         }
     }
 }
