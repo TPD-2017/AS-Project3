@@ -1,13 +1,34 @@
 package tp3.clock.interfaces;
 
+import tp3.clock.Clock;
+
 import javax.swing.*;
 import java.awt.*;
 
 public class AdjustClock extends JPanel {
 
-    public void pintar(){
+    private int currentSecond;
+    private int currentMinute;
+    private int currentHour;
+
+    public void pintar(Clock c, JFrame w){
         repaint();
-        revalidate();
+        validate();
+        JTextArea textAreaH = new JTextArea();
+        JTextArea textAreaM = new JTextArea();
+        JTextArea textAreaS = new JTextArea();
+        textAreaH.setSize(30, 30);
+        w.getContentPane().add(textAreaH);
+        w.setVisible(true);
+        String h = textAreaH.getText();
+        String m = textAreaM.getText();
+        String s = textAreaS.getText();
+        if (!h.equals("") && !m.equals("") && !s.equals("")) {
+            currentHour = Integer.parseInt(h);
+            currentMinute = Integer.parseInt(m);
+            currentSecond = Integer.parseInt(s);
+            c.getState().adjustTime(currentSecond, currentMinute, currentHour, 0, 0, 0);
+        }
     }
 
     public void update(Graphics g)
@@ -18,12 +39,13 @@ public class AdjustClock extends JPanel {
     private void drawStructure(Graphics g) {
         g.setFont(new Font("TimesRoman", Font.BOLD, 20));
         g.setColor(Color.black);
-        g.drawString("Ajust Clock",175,35);
+        g.drawString("Adjust Clock",175,35);
     }
 
     public void paint(Graphics g) {
         super.paint(g);
         drawStructure(g);
+
         /*int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
         int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
         int currentHour = Calendar.getInstance().get(Calendar.HOUR);
