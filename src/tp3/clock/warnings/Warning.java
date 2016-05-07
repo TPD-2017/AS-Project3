@@ -19,6 +19,8 @@ public abstract class Warning {
     private int second=0;
 
     private WarningState state;
+    private WarningState set;
+    private WarningState notSet;
 
     public Warning(Clock clock){
         this.clock=clock;
@@ -58,5 +60,21 @@ public abstract class Warning {
 
     public void setState(WarningState state) {
         this.state = state;
+    }
+
+    public WarningState getSet() {
+        return set;
+    }
+
+    public void setSet(WarningState set) {
+        this.set = set;
+    }
+
+    public WarningState getNotSet() {
+        return notSet;
+    }
+
+    public void setNotSet(WarningState notSet) {
+        this.notSet = notSet;
     }
 }
