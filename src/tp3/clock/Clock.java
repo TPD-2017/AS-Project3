@@ -54,7 +54,7 @@ public class Clock implements Runnable {
      */
     private Warning cur_warning;
     private WarningAlarm alarm = new WarningAlarm(this);
-    private WarningTimeOut timeOut;
+    private WarningTimeOut timeOut = new WarningTimeOut(this);
 
     public Clock(){
         this.setCur_interface(this.getAnalog());
@@ -146,6 +146,7 @@ public class Clock implements Runnable {
                 sleep(1000);
                 this.getState().tick();
                 this.getAlarm().getState().tryRing();
+                this.getTimeOut().getState().tryRing();
                 this.getCur_interface().redraw();
             }
         } catch (Exception e){
