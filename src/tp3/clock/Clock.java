@@ -10,6 +10,7 @@ import tp3.clock.warnings.Warning;
 import tp3.clock.warnings.alarm.WarningAlarm;
 import tp3.clock.warnings.timeOut.WarningTimeOut;
 
+import javax.swing.*;
 import java.util.Calendar;
 
 /***
@@ -41,6 +42,7 @@ public class Clock {
     private Interface cur_interface = this.digital;
     private InterfaceAnalog analog = new InterfaceAnalog(this);
     private InterfaceDigital digital = new InterfaceDigital(this);
+    private JFrame window = new JFrame();
 
     /***
      * Design Pattern State
@@ -113,5 +115,9 @@ public class Clock {
 
     public ClockStateSet getSet() {
         return set;
+    }
+
+    public JFrame getWindow() {
+        return window;
     }
 }
