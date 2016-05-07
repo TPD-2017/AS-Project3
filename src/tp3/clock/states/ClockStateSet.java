@@ -30,6 +30,8 @@ public class ClockStateSet extends ClockState {
     @Override
     public void tick() {
         this.getClock().getCal().add(Calendar.SECOND, 1);
+        this.getClock().getAlarm().getState().tryRing();
+        this.getClock().getTimeOut().getState().tryRing();
     }
 
     @Override

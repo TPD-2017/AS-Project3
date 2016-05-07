@@ -31,6 +31,8 @@ public class ClockStateRing extends ClockState {
     @Override
     public void tick() {
         this.getClock().getCal().add(Calendar.SECOND, 1);
+        this.getClock().getAlarm().getState().tryRing();
+        this.getClock().getTimeOut().getState().tryRing();
         System.out.println(">>>>>>>>>IT'S RINGING<<<<<<<<<<<");
     }
 
