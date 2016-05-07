@@ -56,3 +56,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 .idea/
+src/META-INF/MANIFEST.MF
+AS-Project3.iml
