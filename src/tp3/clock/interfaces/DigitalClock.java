@@ -4,20 +4,23 @@ import tp3.clock.Clock;
 
 import javax.swing.*;
 import java.awt.*;
+import java.text.DecimalFormat;
 import java.util.Calendar;
 
 public class DigitalClock extends JPanel {
 
-    private int currentSecond;
-    private int currentMinute;
-    private int currentHour;
+    private String currentSecond;
+    private String currentMinute;
+    private String currentHour;
+
+    DecimalFormat formatter = new DecimalFormat("00");
 
     public void pintar(Clock c){
         repaint();
         revalidate();
-        currentSecond = c.getCal().get(Calendar.SECOND);
-        currentMinute = c.getCal().get(Calendar.MINUTE);
-        currentHour = c.getCal().get(Calendar.HOUR_OF_DAY);
+        currentSecond = formatter.format(c.getCal().get(Calendar.SECOND));
+        currentMinute = formatter.format(c.getCal().get(Calendar.MINUTE));
+        currentHour = formatter.format(c.getCal().get(Calendar.HOUR_OF_DAY));
     }
 
     public void update(Graphics g)
