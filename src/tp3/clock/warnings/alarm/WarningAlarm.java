@@ -6,15 +6,12 @@ import tp3.clock.warnings.alarm.states.WarningAlarmStateNotSet;
 import tp3.clock.warnings.alarm.states.WarningAlarmStateSet;
 
 
-public abstract class WarningAlarm extends Warning {
-
-    private WarningAlarmStateNotSet notSet = new WarningAlarmStateNotSet();
-    private WarningAlarmStateSet set = new WarningAlarmStateSet();
+public class WarningAlarm extends Warning {
 
     public WarningAlarm(Clock clock) {
         super(clock);
-        this.setSet(new WarningAlarmStateSet());
-        this.setNotSet(new WarningAlarmStateNotSet());
-        this.setState(this.notSet);
+        this.setSet(new WarningAlarmStateSet(this));
+        this.setNotSet(new WarningAlarmStateNotSet(this));
+        this.setState(this.getNotSet());
     }
 }

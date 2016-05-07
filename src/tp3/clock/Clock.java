@@ -2,6 +2,7 @@ package tp3.clock;
 
 
 import tp3.clock.interfaces.*;
+import tp3.clock.states.ClockStateRing;
 import tp3.clock.states.ClockStateSet;
 import tp3.clock.states.ClockStateStopped;
 import tp3.clock.warnings.Warning;
@@ -35,6 +36,7 @@ public class Clock implements Runnable {
     private ClockState state;
     private ClockStateStopped stopped = new ClockStateStopped(this);
     private ClockStateSet set = new ClockStateSet(this);
+    private ClockStateRing ring = new ClockStateRing(this);
 
     /***
      * Design Pattern Observer
@@ -51,7 +53,7 @@ public class Clock implements Runnable {
      * Design Pattern State
      */
     private Warning cur_warning;
-    private WarningAlarm alarm;
+    private WarningAlarm alarm = new WarningAlarm(this);
     private WarningTimeOut timeOut;
 
     public Clock(){
@@ -143,10 +145,15 @@ public class Clock implements Runnable {
             while (true) {
                 sleep(1000);
                 this.getState().tick();
+                this.getAlarm().getState().tryRing();
                 this.getCur_interface().redraw();
             }
         } catch (Exception e){
             e.printStackTrace();
         }
+    }
+
+    public ClockStateRing getRing() {
+        return ring;
     }
 }

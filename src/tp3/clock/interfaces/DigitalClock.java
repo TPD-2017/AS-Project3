@@ -17,7 +17,7 @@ public class DigitalClock extends JPanel {
         revalidate();
         currentSecond = c.getCal().get(Calendar.SECOND);
         currentMinute = c.getCal().get(Calendar.MINUTE);
-        currentHour = c.getCal().get(Calendar.HOUR);
+        currentHour = c.getCal().get(Calendar.HOUR_OF_DAY);
     }
 
     public void update(Graphics g)

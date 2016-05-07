@@ -7,6 +7,10 @@ public abstract class WarningState {
 
     private Warning warning;
 
+    public WarningState(Warning warning){
+        this.warning = warning;
+    }
+
     public abstract void createWarning(int hour, int minutes, int seconds);
 
     public abstract void adjustWarning(int hour, int minutes, int seconds);

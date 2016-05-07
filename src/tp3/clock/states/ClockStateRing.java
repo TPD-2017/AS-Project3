@@ -30,8 +30,8 @@ public class ClockStateRing extends ClockState {
 
     @Override
     public void tick() {
-        this.getClock().getCal().roll(Calendar.SECOND, true);
-        //PLAY A SOUND
+        this.getClock().getCal().add(Calendar.SECOND, 1);
+        System.out.println(">>>>>>>>>IT'S RINGING<<<<<<<<<<<");
     }
 
     @Override

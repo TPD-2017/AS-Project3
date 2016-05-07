@@ -29,12 +29,12 @@ public class ClockStateSet extends ClockState {
 
     @Override
     public void tick() {
-        this.getClock().getCal().roll(Calendar.SECOND, true);
+        this.getClock().getCal().add(Calendar.SECOND, 1);
     }
 
     @Override
     public void ring() {
-        //SET STATE TO RIIIIIIIIIIIIIIIIIIIIIIIIIIIIIIING
+        this.getClock().setState(this.getClock().getRing());
     }
 
     @Override

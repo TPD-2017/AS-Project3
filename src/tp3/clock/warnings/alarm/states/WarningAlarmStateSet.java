@@ -1,9 +1,16 @@
 package tp3.clock.warnings.alarm.states;
 
+import tp3.clock.warnings.Warning;
 import tp3.clock.warnings.WarningState;
+
+import java.util.Calendar;
 
 
 public class WarningAlarmStateSet extends WarningState {
+    public WarningAlarmStateSet(Warning warning) {
+        super(warning);
+    }
+
     @Override
     public void createWarning(int hour, int minutes, int seconds) {
         System.out.println(">>Alarm already created.");
@@ -18,11 +25,17 @@ public class WarningAlarmStateSet extends WarningState {
 
     @Override
     public void cancelWarning() {
-
+        this.getWarning().setState(this.getWarning().getNotSet());
     }
 
     @Override
     public void tryRing() {
-
+        Calendar c = this.getWarning().getClock().getCal();
+        if((c.get(Calendar.HOUR_OF_DAY) == this.getWarning().getHour()) &&
+                (c.get(Calendar.MINUTE) == this.getWarning().getMinute()) &&
+                (c.get(Calendar.SECOND) == this.getWarning().getSecond())
+                ){
+            this.getWarning().getClock().getState().ring();
+        }
     }
 }
