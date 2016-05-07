@@ -27,7 +27,7 @@ public class InterfaceAlarm extends Interface {
 
     @Override
     public void redraw() {
-
+        alarmclock.pintar(this.getClock());
     }
 
     @Override

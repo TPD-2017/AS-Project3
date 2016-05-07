@@ -26,7 +26,7 @@ public class InterfaceTimeOut extends Interface {
     }
 
     public void redraw(){
-        timeoutclock.pintar();
+        timeoutclock.pintar(this.getClock());
     }
 
     @Override
