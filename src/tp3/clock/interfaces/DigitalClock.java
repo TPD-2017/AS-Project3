@@ -41,9 +41,9 @@ public class DigitalClock extends JPanel /*implements Runnable*/ {
     public void paint(Graphics g) {
         super.paint(g);
         drawStructure(g);
-        int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
-        int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
-        int currentHour = Calendar.getInstance().get(Calendar.HOUR);
+        //int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
+        //int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
+        //int currentHour = Calendar.getInstance().get(Calendar.HOUR);
 
         g.setFont(new Font("TimesRoman", Font.PLAIN, 55));
         g.setColor(Color.black);
