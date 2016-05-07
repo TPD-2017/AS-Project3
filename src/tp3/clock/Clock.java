@@ -141,7 +141,7 @@ public class Clock implements Runnable {
     public void run() {
         try {
             while (true) {
-                sleep(100);
+                sleep(1000);
                 this.getState().tick();
                 this.getCur_interface().redraw();
             }

@@ -1,5 +1,7 @@
 package tp3.clock.interfaces;
 
+import tp3.clock.Clock;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
@@ -7,9 +9,17 @@ import java.util.Calendar;
 public class DigitalClock extends JPanel /*implements Runnable*/ {
     private Thread thread = null;
 
-    public void pintar(){
+
+    private int currentSecond;
+    private int currentMinute;
+    private int currentHour;
+
+    public void pintar(Clock c){
         repaint();
         revalidate();
+        currentSecond = c.getCal().get(Calendar.SECOND);
+        currentMinute = c.getCal().get(Calendar.MINUTE);
+        currentHour = c.getCal().get(Calendar.HOUR);
     }
 
     public void update(Graphics g)

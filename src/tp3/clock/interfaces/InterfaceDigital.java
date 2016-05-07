@@ -30,7 +30,7 @@ public class InterfaceDigital extends Interface {
 
     @Override
     public void redraw() {
-        digitalclock.pintar();
+        digitalclock.pintar(this.getClock());
     }
 
     @Override

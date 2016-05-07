@@ -30,7 +30,7 @@ public class InterfaceAnalog extends Interface {
     }
 
     public void redraw(){
-        analogclock.pintar();
+        analogclock.pintar(this.getClock());
     }
 
     public void killinterface() {

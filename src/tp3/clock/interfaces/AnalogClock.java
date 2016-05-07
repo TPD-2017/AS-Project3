@@ -1,17 +1,26 @@
 package tp3.clock.interfaces;
 
+import tp3.clock.Clock;
+
 import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
 
-public class AnalogClock extends JPanel /*implements Runnable*/ {
+public class AnalogClock extends JPanel {
     private Thread thread = null;
     private int xcenter = 240, ycenter = 240;
     private int lastxs = 0, lastys = 0, lastxm = 0, lastym = 0, lastxh = 0,lastyh = 0;
 
-    public void pintar(){
+    private int currentSecond;
+    private int currentMinute;
+    private int currentHour;
+
+    public void pintar(Clock c){
         repaint();
         revalidate();
+        currentSecond = c.getCal().get(Calendar.SECOND);
+        currentMinute = c.getCal().get(Calendar.MINUTE);
+        currentHour = c.getCal().get(Calendar.HOUR);
     }
 
     public void update(Graphics g)
@@ -40,9 +49,9 @@ public class AnalogClock extends JPanel /*implements Runnable*/ {
     public void paint(Graphics g) {
         super.paint(g);
         drawStructure(g);
-        int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
-        int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
-        int currentHour = Calendar.getInstance().get(Calendar.HOUR);
+        //int currentSecond = Calendar.getInstance().get(Calendar.SECOND);
+        //int currentMinute = Calendar.getInstance().get(Calendar.MINUTE);
+        //int currentHour = Calendar.getInstance().get(Calendar.HOUR);
 
         int xsecond = (int) (Math.cos(currentSecond * 3.14f / 30 - 3.14f / 2) * 120 + xcenter);
         int ysecond = (int) (Math.sin(currentSecond * 3.14f / 30 - 3.14f / 2) * 120 + ycenter);
