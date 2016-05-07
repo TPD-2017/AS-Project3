@@ -81,6 +81,47 @@ public class BarMenu {
         group.add(rbMenuItem);
         menu.add(rbMenuItem);
 
+
+        //Build the first menu.
+        menu = new JMenu("Actions");
+        menu.setMnemonic(KeyEvent.VK_A);
+        menu.getAccessibleContext().setAccessibleDescription(
+                "The only menu in this program that has menu items");
+        menuBar.add(menu);
+
+        //a group of radio button menu items
+        menu.addSeparator();
+        ButtonGroup group2 = new ButtonGroup();
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("Start") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.getState().start();
+            }
+        });
+        rbMenuItem.setMnemonic(KeyEvent.VK_R);
+        group.add(rbMenuItem);
+        menu.add(rbMenuItem);
+
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("Stop") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.getState().stop();
+            }
+        });
+        rbMenuItem.setMnemonic(KeyEvent.VK_R);
+        group.add(rbMenuItem);
+        menu.add(rbMenuItem);
+
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("StopRinging") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                //c.setState(c.get;
+            }
+        });
+        rbMenuItem.setMnemonic(KeyEvent.VK_R);
+        group.add(rbMenuItem);
+        menu.add(rbMenuItem);
+
         return menuBar;
     }
 }
