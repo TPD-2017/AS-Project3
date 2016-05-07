@@ -16,7 +16,7 @@ public class WarningTimeOutStateSet extends WarningState {
 
     @Override
     public void createWarning(int hour, int minutes, int seconds) {
-        System.out.println(">>Alarm already created.");
+        System.out.println(">>TimeOut already created.");
     }
 
     @Override
