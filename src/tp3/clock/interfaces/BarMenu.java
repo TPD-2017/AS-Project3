@@ -29,7 +29,7 @@ public class BarMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c.getCur_interface().killinterface();
-                c.getAnalog().showTime();
+                c.getAnalog().showInterface();
             }
         });
         //rbMenuItem.setSelected(true);
@@ -41,24 +41,42 @@ public class BarMenu {
             @Override
             public void actionPerformed(ActionEvent e) {
                 c.getCur_interface().killinterface();
-                c.getDigital().showTime();
+                c.getDigital().showInterface();
             }
         });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
         group.add(rbMenuItem);
         menu.add(rbMenuItem);
 
-        rbMenuItem = new JRadioButtonMenuItem("Adjust Time");
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("Adjust Time") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.getCur_interface().killinterface();
+                //c.getAdjust().showInterface();
+            }
+        });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
         group.add(rbMenuItem);
         menu.add(rbMenuItem);
 
-        rbMenuItem = new JRadioButtonMenuItem("Alarm");
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("Alarm") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.getCur_interface().killinterface();
+                //c.getAlarm().showInterface();
+            }
+        });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
         group.add(rbMenuItem);
         menu.add(rbMenuItem);
 
-        rbMenuItem = new JRadioButtonMenuItem("TimeOut");
+        rbMenuItem = new JRadioButtonMenuItem(new AbstractAction("TimeOut") {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                c.getCur_interface().killinterface();
+                //c.getTimeOut().showInterface();
+            }
+        });
         rbMenuItem.setMnemonic(KeyEvent.VK_O);
         group.add(rbMenuItem);
         menu.add(rbMenuItem);

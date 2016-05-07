@@ -13,7 +13,7 @@ public class Main {
         /*NOTHING RUNS AND I AM VERY SAD */
         Clock c = new Clock();
         c.setCur_interface(c.getAnalog());
-        c.getAnalog().showTime();
+        c.getAnalog().showInterface();
         /*c.setCur_interface(c.getAnalog());
         c.getDigital().showTime();
 

@@ -16,7 +16,7 @@ public abstract class Interface extends JFrame {
         this.clock = clock;
     }
 
-    public abstract void showTime();
+    public abstract void showInterface();
 
     public abstract void killinterface();
 
