@@ -7,10 +7,10 @@ import javax.swing.*;
 import java.awt.*;
 import java.util.Calendar;
 
-public class InterfaceDigital extends Interface {
+public class InterfaceAdjust extends Interface {
     JFrame window;
-    DigitalClock digitalclock = new DigitalClock();
-    public InterfaceDigital(Clock clock) {
+    AdjustClock adjustclock = new AdjustClock();
+    public InterfaceAdjust(Clock clock) {
         super(clock);
     }
 
@@ -23,19 +23,19 @@ public class InterfaceDigital extends Interface {
 
         BarMenu menuBar = new BarMenu();
         window.setJMenuBar(menuBar.addMenu(this.getClock()));
-        window.getContentPane().add(digitalclock);
+        window.getContentPane().add(adjustclock);
         window.setVisible(true);
-        digitalclock.start();
+        adjustclock.start();
     }
 
     @Override
     public void killinterface() {
         window.getContentPane().removeAll();
-        digitalclock.stop();
+        adjustclock.stop();
     }
 }
 
-class DigitalClock extends JPanel implements Runnable {
+class AdjustClock extends JPanel implements Runnable {
     private Thread thread = null;
 
     public void start()
@@ -91,3 +91,4 @@ class DigitalClock extends JPanel implements Runnable {
         g.drawString(currentHour+" : "+currentMinute+" : "+currentSecond,135,255);
     }
 }
+

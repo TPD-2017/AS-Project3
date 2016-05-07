@@ -16,13 +16,12 @@ public class InterfaceAnalog extends Interface {
     }
 
     @Override
-    public void showTime() {
+    public void showInterface() {
         //JFrame window = new JFrame();
         window = this.getClock().getWindow();
         window.setBackground(Color.black);
         window.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         window.setSize(500, 500);
-
 
         window.getContentPane().add(analogclock);
         BarMenu menuBar = new BarMenu();
